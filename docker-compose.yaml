@@ -6,7 +6,7 @@ services:
     build:
       context: ./gateway
       dockerfile: Dockerfile
-    image: recwayer/gateway:latest
+    image: fdk777/gateway-service:latest
     ports:
       - "8082:8082"
     volumes:
@@ -38,7 +38,7 @@ services:
     build:
       context: ./domain-service
       dockerfile: Dockerfile
-    image: recwayer/domain:latest
+    image: fdk777/domain-service:latest
     ports:
       - "8080:8080"
       - "50051:50051"
