@@ -10,7 +10,7 @@ services:
     ports:
       - "8082:8082"
     volumes:
-      - ./logstash/logs/application.log:/app/logs/application.log
+      - ./logstash/logs/gateway:/app/logs/gateway
     environment:
       SERVER_PORT: 8082
       SPRING_DATA_REDIS_HOST: redis
@@ -33,6 +33,8 @@ services:
 
   domain-service:
     container_name: domain
+    volumes:
+      - ./logstash/logs/domain:/app/logs/domain
     build:
       context: ./domain-service
       dockerfile: Dockerfile
@@ -167,7 +169,8 @@ services:
     container_name: logstash
     volumes:
       - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - ./logstash/logs/application.log:/app/logs/application.log
+      - ./logstash/logs/gateway:/app/logs/gateway
+      - ./logstash/logs/domain:/app/logs/domain
     depends_on:
       - elasticsearch
     ports:
