@@ -70,6 +70,17 @@ services:
       - app-network
     restart: unless-stopped
 
+  redis-exporter:
+    image: oliver006/redis_exporter:latest
+    container_name: redis-exporter
+    environment:
+      REDIS_ADDR: "redis:6379"
+    ports:
+      - "9121:9121"
+    networks:
+      - app-network
+    restart: unless-stopped
+
   rabbitmq:
     image: rabbitmq:management
     container_name: rabbitmq

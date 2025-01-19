@@ -9,3 +9,8 @@ scrape_configs:
           - 'gateway:8082'  # Адрес и порт, где метрики доступны
     metrics_path: '/actuator/prometheus'  # Путь, по которому доступны метрики
     scrape_interval: 10s
+
+  - job_name: 'redis'
+    static_configs:
+      - targets: [ 'redis-exporter:9121' ]
+    scrape_interval: 15s

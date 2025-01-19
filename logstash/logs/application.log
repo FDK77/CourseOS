@@ -108,3 +108,75 @@
 2025-01-18 19:26:09 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
 2025-01-18 19:28:11 [http-nio-8082-exec-3] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 303 ms
 2025-01-18 19:30:29 [http-nio-8082-exec-2] INFO  c.e.controller.GatewayController - GET request for getting courses with (page: 0, size: 1)
+2025-01-19 17:59:59 [main] INFO  c.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17-ea with PID 1 (/app/app.jar started by root in /app)
+2025-01-19 17:59:59 [main] INFO  c.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-19 18:00:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 18:00:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-19 18:00:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 0 Redis repository interfaces.
+2025-01-19 18:00:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-01-19 18:00:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-01-19 18:00:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-19 18:00:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-01-19 18:00:09 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-19 18:00:09 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9445 ms
+2025-01-19 18:00:25 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-01-19 18:00:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-01-19 18:00:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-01-19 18:00:26 [main] INFO  c.example.GatewayServiceApplication - Started GatewayServiceApplication in 28.56 seconds (process running for 33.153)
+2025-01-19 18:00:34 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-19 18:00:34 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-19 18:00:34 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-19 18:01:22 [http-nio-8082-exec-5] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 303 ms
+2025-01-19 18:02:44 [http-nio-8082-exec-7] INFO  c.e.controller.GatewayController - POST request for creating (course: CourseCreateRequest(title=Сети, instructor=Пал саныч, hours=100))
+2025-01-19 18:02:44 [http-nio-8082-exec-7] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [rabbitmq:5672]
+2025-01-19 18:02:44 [http-nio-8082-exec-7] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#30bd39d5:0/SimpleConnection@4a263a5b [delegate=amqp://guest@172.18.0.6:5672/, localPort=51664]
+2025-01-19 18:02:44 [http-nio-8082-exec-7] INFO  o.s.amqp.rabbit.core.RabbitAdmin - Auto-declaring a non-durable, auto-delete, or exclusive Queue (eventQueue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-01-19 18:02:44 [http-nio-8082-exec-7] INFO  com.example.rabbit.MessageProducer - Message request sent in rabbit. (Message: Message(operation=CREATE, data=CourseCreateRequest(title=Сети, instructor=Пал саныч, hours=100)))
+2025-01-19 18:03:27 [http-nio-8082-exec-5] INFO  c.example.other.CacheLoggingAspect - Method 'GatewayController.getAll(..)' retrieved data from DB (cache: course, key: 0).
+2025-01-19 18:03:27 [http-nio-8082-exec-5] INFO  c.e.controller.GatewayController - GET request for getting courses with (page: 0, size: 1)
+2025-01-19 18:06:02 [http-nio-8082-exec-2] INFO  c.e.controller.GatewayController - POST request for creating (course: CourseCreateRequest(title=Сети, instructor=Пал саныч, hours=100))
+2025-01-19 18:06:02 [http-nio-8082-exec-2] INFO  com.example.rabbit.MessageProducer - Message request sent in rabbit. (Message: Message(operation=CREATE, data=CourseCreateRequest(title=Сети, instructor=Пал саныч, hours=100)))
+2025-01-19 18:06:09 [http-nio-8082-exec-3] INFO  c.example.other.CacheLoggingAspect - Method 'GatewayController.getAll(..)' retrieved data from DB (cache: course, key: 0).
+2025-01-19 18:06:09 [http-nio-8082-exec-3] INFO  c.e.controller.GatewayController - GET request for getting courses with (page: 0, size: 3)
+2025-01-19 18:06:41 [http-nio-8082-exec-7] INFO  c.e.controller.GatewayController - POST request for creating (course: CourseCreateRequest(title=Сети, instructor=Пал саныч, hours=100))
+2025-01-19 18:06:41 [http-nio-8082-exec-7] INFO  com.example.rabbit.MessageProducer - Message request sent in rabbit. (Message: Message(operation=CREATE, data=CourseCreateRequest(title=Сети, instructor=Пал саныч, hours=100)))
+2025-01-19 18:06:44 [http-nio-8082-exec-10] INFO  c.e.controller.GatewayController - POST request for creating (course: CourseCreateRequest(title=Сети, instructor=Правыч, hours=100))
+2025-01-19 18:06:44 [http-nio-8082-exec-10] INFO  com.example.rabbit.MessageProducer - Message request sent in rabbit. (Message: Message(operation=CREATE, data=CourseCreateRequest(title=Сети, instructor=Правыч, hours=100)))
+2025-01-19 18:07:38 [http-nio-8082-exec-8] INFO  c.example.other.CacheLoggingAspect - Method 'GatewayController.getAll(..)' retrieved data from DB (cache: course, key: 0).
+2025-01-19 18:07:38 [http-nio-8082-exec-8] INFO  c.e.controller.GatewayController - GET request for getting courses with (page: 0, size: 3)
+2025-01-19 19:31:45 [main] INFO  c.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17-ea with PID 1 (/app/app.jar started by root in /app)
+2025-01-19 19:31:46 [main] INFO  c.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-19 19:31:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 19:31:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-19 19:31:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 107 ms. Found 0 Redis repository interfaces.
+2025-01-19 19:31:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-01-19 19:31:54 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-01-19 19:31:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-19 19:31:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-01-19 19:31:54 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-19 19:31:54 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8293 ms
+2025-01-19 19:32:07 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-01-19 19:32:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-01-19 19:32:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-01-19 19:32:08 [main] INFO  c.example.GatewayServiceApplication - Started GatewayServiceApplication in 23.78 seconds (process running for 27.652)
+2025-01-19 19:32:14 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-19 19:32:14 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-19 19:32:14 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-01-19 19:41:51 [main] INFO  c.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17-ea with PID 1 (/app/app.jar started by root in /app)
+2025-01-19 19:41:51 [main] INFO  c.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-19 19:41:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-19 19:41:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-19 19:41:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67 ms. Found 0 Redis repository interfaces.
+2025-01-19 19:41:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-01-19 19:41:59 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-01-19 19:41:59 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-19 19:41:59 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-01-19 19:41:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-19 19:41:59 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7628 ms
+2025-01-19 19:42:11 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-01-19 19:42:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-01-19 19:42:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-01-19 19:42:12 [main] INFO  c.example.GatewayServiceApplication - Started GatewayServiceApplication in 22.197 seconds (process running for 26.165)
+2025-01-19 19:42:15 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-19 19:42:15 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-19 19:42:15 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
