@@ -1,0 +1,4 @@
+rootProject.name = 'adminka'
+
+include 'gateway'
+include 'domain-service'
